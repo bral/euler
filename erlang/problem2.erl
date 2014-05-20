@@ -32,16 +32,17 @@
 %         fibSequence(Maximum, Current+Previous, Current, Total)
 %   end.
 
--export([solve/0]).
+-export([solve/1]).
 
-solve() ->
-solve(4000000).
+%  Question: Why does this not work as fast when 4000000 is not part of the compile code?
+% solve() ->
+% solve(4000000).
 
 solve(Max) ->
-if
-  true ->
-    solve(Max, 1, 1, 0)
-end.
+% if
+%   true ->
+    solve(Max, 1, 1, 0).
+% end.
 
 solve(Max, Current, Prev, Total) ->
 if
