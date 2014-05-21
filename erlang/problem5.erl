@@ -4,18 +4,19 @@
 
 -module(problem5).
 -export([small/1]).
+-define(print(P), io:format("~p~n", [P])).
 
 small(N) ->
-  check(N, 1, 1).
+  check(N, N, N).
 
-check(Max, Num, Div) when Div > Max ->
+check(Max, Num, Div) when Div =:= 2 ->
   Num;
 check(Max, Num, Div) ->
   case is_divisible(Max, Num, Div) of
     true ->
-      check(Max, Num, Div + 1);
+      check(Max, Num, Div - 1);
     _ ->
-      check(Max, Num + 1, 1)
+      check(Max, Num + (Max - Div) + Div, Max)
   end.
 
 is_divisible(_, Num, Div) when Num rem Div =:= 0 ->
