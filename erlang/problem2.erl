@@ -11,17 +11,24 @@
 fib(Max) ->
     fib_sequence(Max, 1, 1, 0).
 
-fib_sequence(Max, Curr, Prev, Total) ->
-  case fib_max(Max, Curr) of
-      true ->
-        Total;
-      _ when Curr rem 2 =:= 0 ->
-        fib_sequence(Max, Curr + Prev, Curr, Total + Curr);
-      _ ->
-        fib_sequence(Max, Curr + Prev, Curr, Total)
-  end.
+% fib_sequence(Max, Curr, Prev, Total) ->
+%   case fib_max(Max, Curr) of
+%       true ->
+%         Total;
+%       _ when Curr rem 2 =:= 0 ->
+%         fib_sequence(Max, Curr + Prev, Curr, Total + Curr);
+%       _ ->
+%         fib_sequence(Max, Curr + Prev, Curr, Total)
+%   end.
+%
+% fib_max(Max, Curr) when Curr > Max ->
+%   true;
+% fib_max(Max, Curr) when Curr < Max ->
+%   false.
 
-fib_max(Max, Curr) when Curr > Max ->
-  true;
-fib_max(Max, Curr) when Curr < Max ->
-  false.
+fib_sequence(Max, Curr, _, Total) when Curr > Max ->
+  Total;
+fib_sequence(Max, Curr, Prev, Total) when Curr rem 2 =:= 0 ->
+  fib_sequence(Max, Curr + Prev, Curr, Total + Curr);
+fib_sequence(Max, Curr, Prev, Total) ->
+  fib_sequence(Max, Curr + Prev, Curr, Total).
