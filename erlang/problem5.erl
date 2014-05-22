@@ -2,6 +2,8 @@
 
 % What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
+% TODO only check if is_divisible for int which ARE NOT factors of Max
+
 -module(problem5).
 -export([small/1]).
 -define(print(P), io:format("~p~n", [P])).
