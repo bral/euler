@@ -1,13 +1,13 @@
 -module(prime).
--export([isprime/1]).
+-export([is_prime/1]).
 -define(print(P), io:format("~p~n", [P])).
 
-isprime(N) when N =:= 2 ->
+is_prime(N) when N =:= 2 ->
   true;
-isprime(N) when N rem 2 =/= 0 ->
+is_prime(N) when N rem 2 =/= 0 ->
   Sqrt = math:sqrt(N),
   not_divisible(N, Sqrt, 3);
-isprime(_) ->
+is_prime(_) ->
   false.
 
 not_divisible(_, Sqrt, I) when I >= Sqrt ->
