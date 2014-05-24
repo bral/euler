@@ -4,6 +4,7 @@
 
 -module(problem4).
 -export([palindrome/0]).
+-export([run_down/2]).
 
 palindrome() ->
   run_down(999, 999).
