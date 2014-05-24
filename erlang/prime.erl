@@ -2,15 +2,17 @@
 -export([is_prime/1]).
 -define(print(P), io:format("~p~n", [P])).
 
+is_prime(N) when N =:= 1 ->
+  false;
 is_prime(N) when N =:= 2 ->
   true;
 is_prime(N) when N rem 2 =/= 0 ->
-  Sqrt = trunc(math:sqrt(N)),
+  Sqrt = math:sqrt(N),
   not_divisible(N, Sqrt, 3);
 is_prime(_) ->
   false.
 
-not_divisible(_, Sqrt, I) when I =:= Sqrt ->
+not_divisible(_, Sqrt, I) when I == Sqrt ->
   false;
 not_divisible(_, Sqrt, I) when I >= Sqrt ->
   true;

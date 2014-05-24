@@ -3,7 +3,6 @@
 % What is the largest prime factor of the number 600851475143 ?
 
 -module(problem3).
--import([prime, [isprime/1]).
 -export([prime_factor/1]).
 -define(print(P), io:format("~p~n", [P])).
 
