@@ -11,6 +11,6 @@ prob1() -> lists:sum(
     fun(X) ->
       (X rem 3 =:= 0) or
       (X rem 5 =:= 0) end,
-      lists:seq(1,999)
+    lists:seq(1,999)
   )
 ).
