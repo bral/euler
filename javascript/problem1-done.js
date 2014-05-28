@@ -7,12 +7,7 @@ var findMultiples = function(num) {
   var total = 0;
 
   for (var i = num - 1; i > 0; i--) {
-    if(i % 3 === 0) {
-      total += i;
-      continue;
-    }
-
-    if(i % 5 === 0) {
+    if(i % 3 === 0 || i % 5 === 0) {
       total += i;
     }
   }

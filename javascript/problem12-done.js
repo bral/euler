@@ -61,4 +61,4 @@ var triangle = function() {
   return triNum(i);
 };
 
-debug(triangle());
+console.log(triangle());
