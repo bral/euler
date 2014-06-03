@@ -1,6 +1,16 @@
 -module(prime).
--export([is_prime/1]).
+-export([is_prime/1, test/0]).
 -define(print(P), io:format("~p~n", [P])).
+
+test() ->
+  false = is_prime(1),
+  true = is_prime(2),
+  true = is_prime(3),
+  false = is_prime(6),
+  true = is_prime(7),
+  false = is_prime(9),
+  true = is_prime(233),
+  passing.
 
 is_prime(N) when N =:= 1 ->
   false;
